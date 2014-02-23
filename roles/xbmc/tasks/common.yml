@@ -1,0 +1,10 @@
+---
+
+# file: roles/xbmc/tasks/common.yml
+
+- name: main | Installing xbmc configuration.
+  sudo: false
+  template: src={{item}} dest={{ansible_env.HOME}}/.xbmc/userdata/{{item}}
+  with_items:
+  - sources.xml
+  - advancedsettings.xml

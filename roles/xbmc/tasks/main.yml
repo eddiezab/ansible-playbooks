@@ -1,0 +1,9 @@
+---
+
+# file: roles/xbmc/tasks/main.yml
+
+- include: desktop.yml
+  when: raspbmc_host is not defined
+
+- include: common.yml
+

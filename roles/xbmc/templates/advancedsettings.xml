@@ -1,0 +1,24 @@
+<advancedsettings>
+    <videolibrary>
+        <importwatchedstate>true</importwatchedstate>		         
+        <dateadded>2</dateadded>       
+    </videolibrary>
+	<videoscanner>
+		<ignoreerrors>true</ignoreerrors> 
+	</videoscanner>
+	<videodatabase>
+        <type>mysql</type>
+        <host>{{servers.database.host}}</host>
+        <port>{{servers.database.port}}</port>
+        <user>{{xbmc.user}}</user>
+        <pass>{{xbmc.passwd}}</pass>
+    </videodatabase> 
+
+    <musicdatabase>
+        <type>mysql</type>
+        <host>{{servers.database.host}}</host>
+        <port>{{servers.database.port}}</port>
+        <user>{{xbmc.user}}</user>
+        <pass>{{xbmc.passwd}}</pass>
+    </musicdatabase>
+</advancedsettings>

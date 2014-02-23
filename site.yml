@@ -1,0 +1,12 @@
+---
+
+# file: site.yml
+
+- hosts: desktops
+  roles:
+  - { role: sudo, sudo: true, gather_facts: false }
+  - { role: desktop, sudo: true, gather_facts: false }
+
+- hosts: mediacenters
+  roles:
+  - { role: xbmc, sudo: true, gather_facts: true }

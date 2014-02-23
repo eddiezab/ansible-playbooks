@@ -1,0 +1,13 @@
+---
+
+# file: roles/xbmc/tasks/desktop.yml
+
+- name: main | Installing 3rd party repos.
+  apt_repository: repo={{item}} state=present update_cache=yes
+  with_items:
+  - ppa:team-xbmc/ppa
+
+- name: main | Installing xbmc and related software.
+  apt: pkg={{item}} state=present
+  with_items:
+  - xbmc

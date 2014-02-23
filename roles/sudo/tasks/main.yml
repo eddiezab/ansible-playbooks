@@ -1,0 +1,13 @@
+---
+
+# file: roles/sudo/tasks/main.yml
+
+- name: main | Removing the password requirement for sudo.
+  lineinfile:
+    dest=/etc/sudoers
+    regexp='^%sudo'
+    line='%sudo ALL=(ALL:ALL) NOPASSWD:ALL'
+    backup=yes
+    validate='visudo -cf %s'
+    
+

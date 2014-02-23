@@ -1,0 +1,21 @@
+---
+
+# file: group_vars/all.yml
+
+servers:
+  smb:
+    host: 127.0.0.1
+  nfs:
+    host: 127.0.0.1
+  database:
+    host: 127.0.0.1
+    port: 3306
+
+
+xbmc:
+  user: xbmcuser
+  passwd: xbmcpassword
+  sources:
+    video: "nfs://{{servers.nfs.host}}/"
+    music: "smb://{{servers.smb.host}}/media/music"
+    pics: "smb://{{servers.smb.host}}/media/photos"

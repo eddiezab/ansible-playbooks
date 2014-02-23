@@ -1,0 +1,17 @@
+---
+
+# file: roles/desktop/tasks/main.yml
+- name: main | Installing 3rd party repos.
+  apt_repository: repo={{item}} state=present update_cache=yes
+  with_items:
+  - ppa:zfs-native/stable
+
+- name: main | Installing desktop software.
+  apt: pkg={{item}} state=present
+  with_items:
+  - vim
+  - git
+  - chromium-browser
+  - vlc
+  - ubuntu-zfs
+

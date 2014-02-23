@@ -1,0 +1,17 @@
+[desktops]
+krypton			ansible_connection=local
+
+[mediacenters:children]
+mediacenters-pi
+mediacenters-desktop			
+
+[mediacenters-desktop]
+krypton			ansible_connection=local
+
+[mediacenters-pi]
+xbmc-livingroom		ansible_connection=ssh		ansible_ssh_user=pi
+xbmc-bedroom		ansible_connection=ssh		ansible_ssh_user=pi
+
+[mediacenters-pi:vars]
+raspbmc_host=true
+
